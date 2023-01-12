@@ -75,6 +75,7 @@ class _OrderParser:
             case "order":
                 orders_part.__setitem__("id", int(data.get("id")))
                 orders_part.__setitem__("total_paid", float(data.get("total_paid")))
+                orders_part.__setitem__("reference", data.get("reference"))
             case "order_state":
                 orders_part.__setitem__("order_state",
                                         data.get("name").get("language").get(
