@@ -60,4 +60,4 @@ Python 3.10+ is required.
 
 ## License
 
-The project is licensed under the MIT License.
+The project is licensed under the Apache 2.0 License.
