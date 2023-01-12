@@ -1,0 +1,6 @@
+/.iml/
+.python-version
+/venv/
+/prestashop_orders_client.egg-info/
+/dist/
+/.idea/
