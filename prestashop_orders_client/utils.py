@@ -16,7 +16,7 @@ from .exceptions import ResourceForbiddenError, UnexpectedStatusCodeError, Prest
 Representation of an order, containing relevant information about the order.
 """
 Order = namedtuple("Order",
-                   "id total_paid "
+                   "id total_paid reference "
                    "order_state "
                    "email "
                    "first_name last_name company_name phone address city post_code "
