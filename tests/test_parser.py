@@ -19,7 +19,8 @@ class TestOrderParser(TestCase):
         # Create mock return values for the extract_order_data and parse_resource method
         order_data = {
             "order": {'id': '200',
-                      'total_paid': '90.000000'},
+                      'total_paid': '90.000000',
+                      'reference': 'ABCDEF'},
             "order_state": {'id': '4',
                             'name': {'language': {
                                 '@id': '1', '@xlink:href': 'https://example/api/languages/1',
@@ -48,7 +49,7 @@ class TestOrderParser(TestCase):
 
         # Create a mock return value for the parse_resource method
         mock_parse_resource.side_effect = [
-            {'id': 200, 'total_paid': 90.0},
+            {'id': 200, 'total_paid': 90.0, 'reference': 'ABCDEF'},
             {'order_state': 'Shipped'},
             {'email': 'example@example.co'},
             {'first_name': 'John', 'last_name': 'Doe', 'company_name': 'EA Sports',
@@ -62,7 +63,7 @@ class TestOrderParser(TestCase):
         result = self.parser.parse_order(self.order_link)
 
         # Assert that the result is what we expect
-        expected_result = Order(id=200, total_paid=90.000000,
+        expected_result = Order(id=200, total_paid=90.000000, reference='ABCDEF',
                                 order_state="Shipped",
                                 email="example@example.co",
                                 first_name="John", last_name="Doe", company_name="EA Sports", phone="123456778",
@@ -100,8 +101,8 @@ class TestOrderParser(TestCase):
         state_data = {"state_data": "state_data"}
 
         mock__get_resource_as_dict.side_effect = [order_data, order_state_data,
-                                                 customer_data, address_data,
-                                                 country_data, state_data]
+                                                  customer_data, address_data,
+                                                  country_data, state_data]
         expected_result = {
             "order": order_data,
             "order_state": order_state_data,
@@ -129,8 +130,8 @@ class TestOrderParser(TestCase):
         country_data = {"country_data": "country_data"}
 
         mock__get_resource_as_dict.side_effect = [order_data, order_state_data,
-                                                 customer_data, address_data,
-                                                 country_data]
+                                                  customer_data, address_data,
+                                                  country_data]
         expected_result = {
             "order": order_data,
             "order_state": order_state_data,
@@ -145,9 +146,10 @@ class TestOrderParser(TestCase):
 
     def test_parse_resource_on_order(self):
         order_data = {'id': '200',
-                      'total_paid': '90.000000'}
+                      'total_paid': '90.000000',
+                      'reference': 'ABCDEF'}
         result = self.parser.parse_resource("order", order_data)
-        expected_result = {'id': 200, 'total_paid': 90.0}
+        expected_result = {'id': 200, 'total_paid': 90.0, 'reference': 'ABCDEF'}
         self.assertDictEqual(result, expected_result)
 
     def test_parse_resource_on_order_state(self):
