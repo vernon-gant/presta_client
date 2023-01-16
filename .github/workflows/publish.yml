@@ -4,7 +4,7 @@ on:
   release:
     types: [ published ]
 env:
-  PYTHONPATH: ${{ github.workspace }}
+  PYTHONPATH: /home/runner/work/prestashop_orders_client/prestashop_orders_client
 
 permissions:
   contents: read
