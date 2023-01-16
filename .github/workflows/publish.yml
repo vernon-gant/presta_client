@@ -7,7 +7,7 @@ env:
   PYTHONPATH: /home/runner/work/prestashop_orders_client/prestashop_orders_client
 
 permissions:
-  contents: read
+  contents: write-all
 
 jobs:
   deploy:
