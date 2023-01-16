@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='prestashop_orders_client',
-    version='0.0.9',
+    version='0.0.1',
     description='Simple client for PrestaShop Api to extract orders info.',
     long_description=open('README.md', 'r', encoding='utf-8').read(),
     long_description_content_type='text/markdown',
@@ -17,7 +17,6 @@ setup(
     license='Apache License 2.0',
     license_files='LICENSE',
     classifiers=[
-        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 3.10',

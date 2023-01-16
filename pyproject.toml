@@ -8,14 +8,13 @@ xmltodict = ">=0.13.0"
 
 [project]
 name = "prestashop_orders_client"
-version = "0.0.9"
+version = "0.0.1"
 authors = [
     {name = "Aleksandr Zakharov", email = "aleksza.4119@gmail.com"},
 ]
 description = "A simple Python client for PrestaShop API to extract orders"
 readme = "README.md"
 classifiers = [
-    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python :: 3.10",
