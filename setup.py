@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='prestashop_orders_client',
-    version='0.0.1',
+    version='1.0.0',
     description='Simple client for PrestaShop Api to extract orders info.',
     long_description=open('README.md', 'r', encoding='utf-8').read(),
     long_description_content_type='text/markdown',
