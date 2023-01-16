@@ -1,6 +1,8 @@
 name: Test and build
 
-on: [ push, pull_request ]
+on:
+    push:
+        branches: [ dev ]
 env:
   PYTHONPATH: /home/runner/work/prestashop_orders_client/prestashop_orders_client
 
