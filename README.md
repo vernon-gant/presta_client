@@ -9,7 +9,7 @@ post service, but we decided to share it with the community. Maybe it will be us
 >>> from prestashop_orders_client import PrestaShopOrderClient
 >>> client = PrestaShopOrderClient(shop_link="myshop.com", api_key="my_api_key")
 >>> client.get_order(1)
-Order(id=1, total_paid=500.0, 
+Order(id=1, total_paid=500.0, reference='ABCD'
       order_state='Shipped', email='examplemail@gmail.com', 
       first_name='John', last_name='Doe', 
       company_name=None, phone='+12345678', 
@@ -18,7 +18,7 @@ Order(id=1, total_paid=500.0,
       country='Example country', state=None)
 >>> client.get_all_orders()
 [
-Order(id=1, total_paid=500.0, 
+Order(id=1, total_paid=500.0, reference='ABCD'
       order_state='Shipped', email='examplemail@gmail.com', 
       first_name='John', last_name='Doe', 
       company_name=None, phone='+12345678', 
@@ -26,7 +26,7 @@ Order(id=1, total_paid=500.0,
       city='Example city', post_code='123456', 
       country='Example country', state=None),
       
-Order(id=2, total_paid=1000.0, 
+Order(id=2, total_paid=1000.0, reference='ABCD'
       order_state='Shipped', email='examplemail@gmail.com', 
       first_name='John', last_name='Doe', 
       company_name=None, phone='+12345678', 
