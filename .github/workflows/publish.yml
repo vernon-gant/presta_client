@@ -1,19 +1,15 @@
 name: Upload Python Package
 
 on:
-    push:
-        branches: [ main ]
+  push:
+    branches: [ main ]
 env:
   PYTHONPATH: /home/runner/work/prestashop_orders_client/prestashop_orders_client
 
-permissions:
-  contents: write-all
-
 jobs:
   deploy:
-
+    permissions: write-all
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
