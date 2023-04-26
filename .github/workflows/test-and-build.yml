@@ -2,7 +2,7 @@ name: Test and build
 
 on: [ push, pull_request ]
 env:
-  PYTHONPATH: /home/runner/work/prestashop_orders_client/prestashop_orders_client
+  PYTHONPATH: ${{ github.workspace }}
 
 permissions:
   contents: read
