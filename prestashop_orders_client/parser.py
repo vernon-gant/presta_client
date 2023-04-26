@@ -43,10 +43,10 @@ class _OrderParser:
         """
         order_data = _get_resource_as_dict(self.session, order_link, "order")
         order_state_data = _get_resource_as_dict(self.session, order_data['current_state']['@xlink:href'],
-                                                "order_state")
+                                                 "order_state")
         customer_data = _get_resource_as_dict(self.session, order_data['id_customer']['@xlink:href'], "customer")
         address_data = _get_resource_as_dict(self.session, order_data['id_address_delivery']['@xlink:href'],
-                                            "address")
+                                             "address")
         country_data = _get_resource_as_dict(self.session, address_data['id_country']['@xlink:href'], "country")
         try:
             state_data = _get_resource_as_dict(self.session, address_data['id_state']['@xlink:href'], "state")
